@@ -7,4 +7,9 @@
   position: absolute;
   top: 75px;
   right: 0;
+  cursor: pointer;
+}
+
+.profile__add:hover {
+  opacity: 0.6;
 }

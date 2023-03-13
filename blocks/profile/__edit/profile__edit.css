@@ -7,4 +7,9 @@
   right: 0;
   top: 15px;
   background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.profile__edit:hover {
+  opacity: 0.6;
 }
