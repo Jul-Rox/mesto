@@ -1,0 +1,10 @@
+.profile__edit {
+  background: url(../../../image/Edit\ Button.svg);
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  background-repeat: no-repeat;
+}
