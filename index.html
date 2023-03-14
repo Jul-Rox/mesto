@@ -11,6 +11,30 @@
       <img src="./image/logo.svg" alt="Логотип Место" class="header__logo">
     </header>
     <main class="content">
+
+      <section class="form">
+        <div class="form__popup-main">
+
+        <button class="form__close" type="button"></button>
+        <h2 class="form__popup-title">Редактировать профиль</h2>
+        <form class="form__popup">
+
+
+          <fieldset class="form__popup-menu">
+            <label for="name"></label>
+            <input type="text" id="name" name="username" placeholder="Имя">
+
+
+            <label for="description"></label>
+            <input type="text" id="description" name="description" placeholder="Описание">
+          </fieldset>
+
+          <button class="form__save" type="submit" value="Submit">Сохранить</button>
+
+        </form>
+        </div>
+      </section>
+
       <section class="profile">
         <img src="./image/avatar.jpg" alt="Аватар" class="profile__avatar">
         <div class="profile__info">
@@ -18,7 +42,7 @@
           <article class="profile__description">Исследователь океана</article>
           <button class="profile__edit" type="button"></button>
         </div>
-        <button class="profile__add" type="submit"></button>
+        <button class="profile__add" type="button"></button>
       </section>
       <section class="elements">
       <ul class="element">

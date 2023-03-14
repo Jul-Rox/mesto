@@ -4,6 +4,13 @@
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/content/content.css);
+@import url(../blocks/form/form.css);
+@import url(../blocks/form/__close/form__close.css);
+@import url(../blocks/form/__popup-main/form__popup-main.css);
+@import url(../blocks/form/__popup-menu/form__popup-menu.css);
+@import url(../blocks/form/__popup-title/form__popup-title.css);
+@import url(../blocks/form/__popup/form__popup.css);
+@import url(../blocks/form/__save/form__save.css);
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__add/profile__add.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
