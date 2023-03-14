@@ -1,6 +1,7 @@
 .form__popup {
   margin: 0;
   display: flex;
+  align-self: center;
   flex-direction: column;
   align-items: center;
   max-width: 430px;
@@ -12,4 +13,5 @@
   padding-left: 36px;
   padding-right: 36px;
   padding-bottom: 37px;
+  opacity: 1;
 }
