@@ -8,6 +8,8 @@
   top: 15px;
   background-repeat: no-repeat;
   cursor: pointer;
+  background-color: transparent;
+  border:none;
 }
 
 .profile__edit:hover {
