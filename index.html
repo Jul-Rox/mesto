@@ -11,21 +11,6 @@
       <img src="./image/logo.svg" alt="Логотип Место" class="header__logo">
     </header>
     <main class="content">
-      <section class="form">
-        <div class="form__popup-main form__popup-main_opened">
-        <button class="form__close" type="button"></button>
-        <form class="form__popup">
-          <h2 class="form__popup-title">Редактировать профиль</h2>
-          <fieldset class="form__popup-menu">
-            <label for="name"></label>
-            <input class="form__name" type="text" id="name" name="username" placeholder="Имя">
-            <label for="description"></label>
-            <input class="form__description" type="text" id="description" name="description" placeholder="Описание">
-          </fieldset>
-          <button class="form__save" type="submit" value="Submit">Сохранить</button>
-        </form>
-        </div>
-      </section>
       <section class="profile">
         <img src="./image/avatar.jpg" alt="Аватар" class="profile__avatar">
         <div class="profile__info">
@@ -85,5 +70,21 @@
         <h2 class="footer__content">© 2023 Mesto Russia</h2>
       </section>
     </main>
+    <section class="form form_opened">
+      <div class="form__popup-main">
+      <button class="form__close" type="button"></button>
+      <form class="form__popup">
+        <h2 class="form__popup-title">Редактировать профиль</h2>
+        <fieldset class="form__popup-menu">
+          <label for="name"></label>
+          <input class="form__name" type="text" id="name" name="username" placeholder="Имя">
+          <label for="description"></label>
+          <input class="form__description" type="text" id="description" name="description" placeholder="Описание">
+        </fieldset>
+        <button class="form__save" type="submit" value="Submit">Сохранить</button>
+      </form>
+      </div>
+    </section>
+    <script src="./scripts/script.js"></script>
   </body>
 </html>

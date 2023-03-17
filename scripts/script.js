@@ -1,13 +1,14 @@
+console.log("Привет, мир!");
 // Находим форму в DOM
-let formElement = // Воспользуйтесь методом querySelector()
+let formElement = document.querySelector(".form");// Воспользуйтесь методом querySelector()
 // Находим поля формы в DOM
-let nameInput = // Воспользуйтесь инструментом .querySelector()
-let jobInput = // Воспользуйтесь инструментом .querySelector()
-
+let nameInput = formElement.querySelector(".form__close");// Воспользуйтесь инструментом .querySelector()
+let jobInput = document.querySelector(".profile__edit");// Воспользуйтесь инструментом .querySelector()
+console.log(jobInput);
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
-function handleFormSubmit (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+//function handleFormSubmit (evt) {
+//    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
                                                 // Так мы можем определить свою логику отправки.
                                                 // О том, как это делать, расскажем позже.
 
@@ -16,8 +17,8 @@ function handleFormSubmit (evt) {
     // Выберите элементы, куда должны быть вставлены значения полей
 
     // Вставьте новые значения с помощью textContent
-}
+//}
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', handleFormSubmit);
+//formElement.addEventListener('submit', handleFormSubmit);
