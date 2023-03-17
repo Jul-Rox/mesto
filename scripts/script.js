@@ -1,10 +1,10 @@
 console.log("Привет, мир!");
 // Находим форму в DOM
-let formElement = document.querySelector(".form");// Воспользуйтесь методом querySelector()
+const popupElement = document.querySelector(".popup");// Воспользуйтесь методом querySelector()
 // Находим поля формы в DOM
-let nameInput = formElement.querySelector(".form__close");// Воспользуйтесь инструментом .querySelector()
-let jobInput = document.querySelector(".profile__edit");// Воспользуйтесь инструментом .querySelector()
-console.log(jobInput);
+const popupCloseButtonElement = popupElement.querySelector(".popup__close");// Воспользуйтесь инструментом .querySelector()
+const popupOpenButtonElement = document.querySelector(".profile__edit");// Воспользуйтесь инструментом .querySelector()
+console.log(popupOpenButtonElement);
 // Обработчик «отправки» формы, хотя пока
 // она никуда отправляться не будет
 //function handleFormSubmit (evt) {

@@ -1,4 +1,6 @@
-.form__popup {
+.popup__content {
+  z-index: 2;
+  position: absolute;
   margin: 0;
   display: flex;
   align-self: center;
