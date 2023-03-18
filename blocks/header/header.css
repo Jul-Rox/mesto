@@ -1,7 +1,22 @@
 .header {
   padding-top: 45px;
   max-width: 880px;
-  max-height: 74px;
+  max-height: 84px;
   border-bottom: 1px solid rgba(54,54,54,0.7);
   margin: 0 auto;
+}
+
+@media screen and (max-width: 960px) {
+  .header {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+}
+
+@media screen and (max-width: 450px) {
+  .header {
+    padding-left: 27px;
+    padding-top: 28px;
+    max-height: 55px;
+  }
 }

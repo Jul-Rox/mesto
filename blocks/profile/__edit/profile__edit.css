@@ -9,9 +9,34 @@
   background-repeat: no-repeat;
   cursor: pointer;
   background-color: transparent;
+  background-position: right top;
   border:none;
+  grid-area: edit;
+
 }
 
 .profile__edit:hover {
   opacity: 0.6;
+}
+
+
+@media screen and (max-width: 610px) {
+  .profile__edit {
+    background: url(../../../image/edit\ smoll.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: right top;
+    width: 18px;
+    height: 18px;
+
+
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .profile__edit {
+    background-position: left top;
+    right: 19px;
+    top: 6px;
+}
 }

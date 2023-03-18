@@ -9,3 +9,20 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
 }
+/*
+@media screen and (max-width: 960px) {
+  .page {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+}*/
+/*
+@media screen and (max-width: 450px) {
+  .page {
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 28px;
+    padding-bottom: 36px;
+  }
+} */
+

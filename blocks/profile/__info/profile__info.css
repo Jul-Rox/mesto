@@ -2,7 +2,24 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 336px;
-  max-height: 73px;
-  margin-top: 22px;
+  min-width: 336px;
+
+
+  justify-content: center;
+  grid-area: info;
+}
+
+
+@media screen and (max-width: 800px) {
+  .profile__info {
+   justify-content: center;
+  }
+}
+
+
+@media screen and (max-width: 420px) {
+  .profile__info {
+    align-items: center;
+    min-width: 282px;
+}
 }
