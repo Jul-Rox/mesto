@@ -20,7 +20,7 @@
 }
 
 
-@media screen and (max-width: 610px) {
+@media screen and (max-width: 850px) {
   .profile__edit {
     background: url(../../../image/edit\ smoll.svg);
     background-repeat: no-repeat;
@@ -28,8 +28,6 @@
     background-position: right top;
     width: 18px;
     height: 18px;
-
-
   }
 }
 
