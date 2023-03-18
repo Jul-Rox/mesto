@@ -21,7 +21,7 @@
 }
 
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 855px) {
   .profile__add {
     top: 0px;
     background: url(../../../image/add\ big.svg);

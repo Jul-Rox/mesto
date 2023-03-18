@@ -1,5 +1,35 @@
 .footer {
+  margin: 0;
   max-width: 318px;
   padding-top: 67px;
   padding-bottom: 60px;
+}
+
+@media screen and (max-width: 965px) {
+  .footer {
+    padding-left: 40px;
+}
+}
+
+@media screen and (max-width: 830px) {
+  .footer {
+    padding-left: 70px;
+}
+}
+
+@media screen and (max-width: 632px) {
+  .footer {
+    padding-top: 30px;
+    padding-bottom: 32px;
+    padding-left: 19px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .footer {
+    padding-top: 10px;
+    padding-bottom: 32px;
+    padding-left: 19px;
+  }
 }

@@ -19,7 +19,7 @@
 }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 855px) {
   .profile {
     min-height: 286px;
     /*gap: 20px;*/
