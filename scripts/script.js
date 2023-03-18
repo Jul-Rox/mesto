@@ -15,27 +15,35 @@ const popupOpenButtonElement = document.querySelector(".profile__edit");// об�
 const openPopup = function () {
   popupElement.classList.add("popup_opened"); // функция открываем попап
   console.log("Open popup clicked");
-}
+};
+
+//const closePopupClickOverlay = function(event) {
+  //console.log ("event.target, event.currentTarget");
+  //if (event.target !== event.currentTarget) {
+   // return;
+ // }
+  //closePopup();
+//}; для того , чтобы форма закрывалась, если нажать на пустое место
 
 const closePopup = function () {
   popupElement.classList.remove("popup_opened"); // функция закрываем попап
-}
+};
 
 popupOpenButtonElement.addEventListener("click", openPopup);// действие при нажатии открыть
 popupCloseButtonElement.addEventListener("click", closePopup);// действие при нажатии закрыть
 
 // Находим форму в DOM
-let formElement = document.querySelector(".popup__form");// через document обозначаю блок, который мне нужен
+const formElement = document.querySelector(".popup__form");// через document обозначаю блок, который мне нужен
 // Находим поля формы в DOM
-let formName = formElement.querySelector(".popup__name"); // обьявляю переменную для поля name
-let formDescription = formElement.querySelector(".popup__description");// обьявляю переменную для поля description
-let profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
-let profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
+const formName = formElement.querySelector(".popup__name"); // обьявляю переменную для поля name
+const formDescription = formElement.querySelector(".popup__description");// обьявляю переменную для поля description
+const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
+const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
 
 popupOpenButtonElement.addEventListener("click", function () {
   openPopup();
-  formName.value = profileName.textContent; // привязали форму и поля для изменений
-  formDescription.value = profileDescription.textContent;
+  formName.value = profileName.textContent; // связала форму и поля для изменений
+  formDescription.value = profileDescription.textContent; // связала форму и поля для изменений
 });
 
 function handleFormSubmit (evt) {
