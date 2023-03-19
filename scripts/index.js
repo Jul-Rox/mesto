@@ -1,4 +1,3 @@
-console.log("Привет, мир!");
 
 const popupElement = document.querySelector(".popup");// через document обозначаю блок, который мне нужен
 
@@ -48,8 +47,8 @@ popupOpenButtonElement.addEventListener("click", function () {
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    formName.value;                       // Так мы можем определить свою логику отправки.
-    formDescription.value;                         // О том, как это делать, расскажем позже.
+    //formName.value;                       // Так мы можем определить свою логику отправки.
+    //formDescription.value;                         // О том, как это делать, расскажем позже.
 
     profileName.textContent = formName.value;
     profileDescription.textContent = formDescription.value;

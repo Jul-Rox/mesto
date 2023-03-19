@@ -9,6 +9,9 @@
   display: flex;
   flex-direction: row;
   padding-bottom: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 

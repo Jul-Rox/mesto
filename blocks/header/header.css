@@ -1,7 +1,7 @@
 .header {
   padding-top: 45px;
   max-width: 880px;
-  max-height: 84px;
+
   border-bottom: 1px solid rgba(54,54,54,0.7);
   margin: 0 auto;
 }
@@ -17,6 +17,5 @@
   .header {
     padding-left: 27px;
     padding-top: 28px;
-    max-height: 55px;
   }
 }

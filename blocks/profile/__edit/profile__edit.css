@@ -1,7 +1,7 @@
 .profile__edit {
   background: url(../../../image/Edit\ Button.svg);
-  width: 24px;
-  height: 24px;
+  width: 10px;
+  height: 10px;
   background-size: contain;
   position: absolute;
   right: 0;
@@ -26,8 +26,8 @@
     background-repeat: no-repeat;
     background-color: transparent;
     background-position: right top;
-    width: 18px;
-    height: 18px;
+    width: 7.5px;
+    height: 7.5px;
   }
 }
 
