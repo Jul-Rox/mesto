@@ -1,18 +1,14 @@
 .profile__add {
-  background: url(../../../image/Add\ Button.svg);
-  min-width: 22px;
-  height: 22px;
-  background-size: contain;
-  background-repeat: no-repeat;
   position: absolute;
   top: 30px;
   right: 0;
+  min-width: 150px;
+  min-height: 50px;
+  width: 100%;
   cursor: pointer;
   background-color: transparent;
-  border:none;
+  border: 1px solid #ffff;;
   grid-area: add;
-  width: 100%;
-  background-position: top;
 
 }
 
@@ -24,12 +20,7 @@
 @media screen and (max-width: 855px) {
   .profile__add {
     top: 0px;
-    background: url(../../../image/add\ big.svg);
-    width: 16px;
-    height: 16px;
     background-position: center;
     min-width: 282px;
-    background-size: contain;
-    background-repeat: no-repeat;
   }
 }

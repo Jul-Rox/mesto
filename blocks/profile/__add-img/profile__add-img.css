@@ -1,0 +1,16 @@
+.profile__add-img {
+  background: url(../../../image/Add\ Button.svg);
+  min-width: 22px;
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+@media screen and (max-width: 855px) {
+  .profile__add {
+    width: 16px;
+    height: 16px;
+  }
+}

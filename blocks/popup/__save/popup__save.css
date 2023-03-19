@@ -1,5 +1,5 @@
 .popup__save {
-  height: 50px;
+  min-height: 50px;
   max-width: 358px;
   width: 100%;
   background: black;
@@ -20,9 +20,7 @@
 
 @media screen and (max-width: 450px) {
   .popup__save  {
-    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
   }
 }

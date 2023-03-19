@@ -1,5 +1,5 @@
 .element__box {
-  max-height: 361px;
+  min-height: 361px;
   max-width: 282px;
   background-color: white;
   border-radius: 10px;

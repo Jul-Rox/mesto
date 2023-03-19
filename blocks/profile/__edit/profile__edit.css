@@ -1,40 +1,31 @@
 .profile__edit {
-  background: url(../../../image/Edit\ Button.svg);
-  width: 10px;
-  height: 10px;
-  background-size: contain;
   position: absolute;
+  width: 24px;
+  height: 24px;
   right: 0;
   top: 15px;
-  background-repeat: no-repeat;
   cursor: pointer;
   background-color: transparent;
-  background-position: right top;
-  border:none;
+  border: 1px solid #ffff;
   grid-area: edit;
-
 }
 
 .profile__edit:hover {
   opacity: 0.6;
 }
 
-
 @media screen and (max-width: 850px) {
   .profile__edit {
-    background: url(../../../image/edit\ smoll.svg);
-    background-repeat: no-repeat;
-    background-color: transparent;
-    background-position: right top;
-    width: 7.5px;
-    height: 7.5px;
+    width: 18px;
+    height: 18px;
   }
 }
 
+
 @media screen and (max-width: 420px) {
   .profile__edit {
-    background-position: left top;
     right: 19px;
     top: 6px;
 }
 }
+
