@@ -8,10 +8,9 @@
   color: #FFFFFF;
   display: flex;
   flex-direction: row;
-  padding-bottom: 16px;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
+  grid-area: name;
 }
 
 
@@ -20,6 +19,8 @@
     font-size: 27px;
     line-height: 33px;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+    padding-left: 12px;
+
 }
 }

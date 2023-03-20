@@ -1,5 +1,7 @@
 .profile__edit {
-  position: absolute;
+  display: grid;
+  transform: translateX(5px) translateY(15px);
+  align-items: center;
   width: 24px;
   height: 24px;
   right: 0;
@@ -24,7 +26,8 @@
 
 @media screen and (max-width: 420px) {
   .profile__edit {
-    transform: translateX(-20px) translateY(-5px);
+    justify-content: center;
+    transform: translateX(15px) translateY(5px);
 }
 }
 

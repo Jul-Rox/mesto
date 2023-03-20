@@ -6,11 +6,9 @@
   font-size: 18px;
   line-height: 22px;
   color: #FFFFFF;
-  display: flex;
-  flex-direction: row;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
+  grid-area: description;
 }
 
 
