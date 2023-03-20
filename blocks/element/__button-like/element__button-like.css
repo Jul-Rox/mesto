@@ -1,5 +1,5 @@
 .element__button-like {
-  position: absolute;
+  align-self: self-end;
   right: 20px;
   bottom: 30px;
   background: url(../../../image/like.svg);
@@ -10,12 +10,10 @@
   border: none;
   cursor: pointer;
   background-color: transparent;
+  transform: translate(-20px, -5px)
 }
 
 .element__button-like:hover {
   opacity: 0.5;
 }
 
-.element__button-like:active {
-  color: black;
-}
