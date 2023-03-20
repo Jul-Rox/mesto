@@ -1,10 +1,10 @@
 .header__logo {
   width: 142px;
   height: 33px;
-  padding-bottom: 41px;
   background: url(../../../image/logo.svg);
   background-repeat: no-repeat;
   background-size: contain;
+
 }
 
 

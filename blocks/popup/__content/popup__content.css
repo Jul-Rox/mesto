@@ -1,6 +1,6 @@
 .popup__content {
   z-index: 2;
-  position: absolute;
+  position: relative;
   margin: 0;
   display: flex;
   align-self: center;

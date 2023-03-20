@@ -21,6 +21,7 @@
 
 @media screen and (max-width: 855px) {
   .profile {
+    justify-items: center;
     min-height: 286px;
     /*gap: 20px;*/
     grid-template-areas:

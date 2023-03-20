@@ -1,7 +1,6 @@
 .header {
   padding-top: 45px;
   max-width: 880px;
-
   border-bottom: 1px solid rgba(54,54,54,0.7);
   margin: 0 auto;
 }
@@ -16,6 +15,7 @@
 @media screen and (max-width: 450px) {
   .header {
     padding-left: 27px;
-    padding-top: 28px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
 }

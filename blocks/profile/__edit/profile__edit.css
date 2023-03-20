@@ -24,8 +24,7 @@
 
 @media screen and (max-width: 420px) {
   .profile__edit {
-    right: 19px;
-    top: 6px;
+    transform: translateX(-20px) translateY(-5px);
 }
 }
 
