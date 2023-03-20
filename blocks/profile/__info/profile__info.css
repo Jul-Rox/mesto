@@ -8,7 +8,7 @@
   grid-area: info;
   grid-template-areas:
   "name edit"
-  "description description"
+  "description description";
 }
 
 

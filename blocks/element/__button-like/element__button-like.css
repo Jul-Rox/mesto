@@ -10,7 +10,7 @@
   border: none;
   cursor: pointer;
   background-color: transparent;
-  transform: translate(-20px, -5px)
+  transform: translate(-20px, -5px);
 }
 
 .element__button-like:hover {
