@@ -1,8 +1,8 @@
 .profile__info {
   display: grid;
   grid-row: auto;
-  grid-template-columns: auto-fit, minmax(294px 42px);
-  grid-template-rows: auto-fit, minmax(39px 18px);
+  grid-template-columns: (auto-fit, minmax(294px 42px));
+  grid-template-rows: (auto-fit, minmax(39px 18px));
   min-width: 336px;
   gap: 15px;
   grid-area: info;
