@@ -6,7 +6,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 18px 20px;
   align-items: center;
-  min-width: 282px;
   grid-area: element;
 }
 

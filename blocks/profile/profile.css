@@ -7,15 +7,15 @@
   gap: 30px;
   grid-template-columns: 0fr 0fr 1fr;
   grid-template-areas:
-    "avatar info edit add";
+    "avatar info add";
   align-items: center;
-
 }
 
 @media screen and (max-width: 960px) {
   .profile {
     padding-left: 40px;
     padding-right: 40px;
+    padding-bottom: 36px;
 }
 }
 
@@ -25,8 +25,8 @@
     min-height: 286px;
     /*gap: 20px;*/
     grid-template-areas:
-    "avatar info info edit"
-    "add add add add";
+    "avatar info info"
+    "add add add";
 
   }
 }
@@ -40,9 +40,9 @@
     min-width: 282px;
     justify-content: center;
     grid-template-areas:
-    "avatar avatar avatar avatar"
-    "info info edit edit"
-    "add add add add";
+    "avatar avatar avatar "
+    "info info info"
+    "add add add ";
 
   }
 }
@@ -51,6 +51,6 @@
   .profile {
     padding-left: 19px;
     padding-right: 19px;
-    padding-bottom: 36px;
+
   }
 }

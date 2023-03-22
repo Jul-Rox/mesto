@@ -12,6 +12,11 @@
   grid-area: description;
 }
 
+@media screen and (max-width: 855px) {
+  .profile__description {
+    justify-self: self-start;
+  }
+}
 
 @media screen and (max-width: 420px) {
   .profile__description {
