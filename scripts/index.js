@@ -13,6 +13,8 @@ const popupOpenButtonElement = document.querySelector(".profile__edit");// об�
 const openPopup = function () {
   popupElement.classList.add("popup_opened"); // функция открываем попап
   console.log("Open popup clicked");
+  inputName.value = profileName.textContent; // связала форму и поля для изменений
+  inputDescription.value = profileDescription.textContent;
 };
 
 //const closePopupClickOverlay = function(event) {
@@ -38,10 +40,11 @@ const inputDescription = formElement.querySelector(".popup__description");// о�
 const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
 const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
 
-
-  inputName.value = profileName.textContent; // связала форму и поля для изменений
-  inputDescription.value = profileDescription.textContent; // связала форму и поля для изменений
-
+//popupOpenButtonElement.addEventListener("click" , function () {
+  //openPopup();
+ // inputName.value = profileName.textContent; // связала форму и поля для изменений
+ // inputDescription.value = profileDescription.textContent; // связала форму и поля для изменений
+//});
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
