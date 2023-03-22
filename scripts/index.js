@@ -1,4 +1,3 @@
-
 const popupElement = document.querySelector(".popup");// через document обозначаю блок, который мне нужен
 
 const popupCloseButtonElement = popupElement.querySelector(".popup__close"); //обозначаю кнопку в уже вбранном блоке
@@ -39,7 +38,7 @@ const inputDescription = formElement.querySelector(".popup__description");// о�
 const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
 const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
 
-popupOpenButtonElement.addEventListener(function () {
+popupOpenButtonElement.addEventListener("click" , function () {
   openPopup();
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent; // связала форму и поля для изменений
