@@ -39,7 +39,7 @@ const inputDescription = formElement.querySelector(".popup__description");// о�
 const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
 const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
 
-popupOpenButtonElement.addEventListener("click", function () {
+popupOpenButtonElement.addEventListener(function () {
   openPopup();
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent; // связала форму и поля для изменений

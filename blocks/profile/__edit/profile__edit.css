@@ -9,8 +9,6 @@
   cursor: pointer;
   background-color: transparent;
   border: 1px solid #ffff;
-  grid-area: edit;
-
   background: url(../../../image/Edit\ Button.svg);
   background-size: 10px 10px;
   background-repeat: no-repeat;
