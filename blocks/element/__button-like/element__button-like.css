@@ -1,16 +1,15 @@
 .element__button-like {
   align-self: self-end;
-  right: 20px;
-  bottom: 30px;
   background: url(../../../image/like.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  width: 22px;
+  min-width: 22px;
   height: 19px;
   border: none;
   cursor: pointer;
   background-color: transparent;
   transform: translate(-20px, -5px);
+  margin-left: 30px;
 }
 
 .element__button-like:hover {
