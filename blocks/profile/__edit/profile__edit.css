@@ -10,6 +10,11 @@
   background-color: transparent;
   border: 1px solid #ffff;
   grid-area: edit;
+
+  background: url(../../../image/Edit\ Button.svg);
+  background-size: 10px 10px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .profile__edit:hover {
@@ -28,6 +33,8 @@
   .profile__edit {
     justify-content: center;
     transform: translateX(15px) translateY(7px);
+    background-size: 7px 7px;
 }
 }
+
 

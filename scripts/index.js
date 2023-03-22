@@ -34,15 +34,15 @@ popupCloseButtonElement.addEventListener("click", closePopup);// действи�
 // Находим форму в DOM
 const formElement = document.querySelector(".popup__form");// через document обозначаю блок, который мне нужен
 // Находим поля формы в DOM
-const formName = formElement.querySelector(".popup__name"); // обьявляю переменную для поля name
-const formDescription = formElement.querySelector(".popup__description");// обьявляю переменную для поля description
+const inputName = formElement.querySelector(".popup__name"); // обьявляю переменную для поля name
+const inputDescription = formElement.querySelector(".popup__description");// обьявляю переменную для поля description
 const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
 const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
 
 popupOpenButtonElement.addEventListener("click", function () {
   openPopup();
-  formName.value = profileName.textContent; // связала форму и поля для изменений
-  formDescription.value = profileDescription.textContent; // связала форму и поля для изменений
+  inputName.value = profileName.textContent; // связала форму и поля для изменений
+  inputDescription.value = profileDescription.textContent; // связала форму и поля для изменений
 });
 
 function handleFormSubmit (evt) {
@@ -50,8 +50,8 @@ function handleFormSubmit (evt) {
     //formName.value;                       // Так мы можем определить свою логику отправки.
     //formDescription.value;                         // О том, как это делать, расскажем позже.
 
-    profileName.textContent = formName.value;
-    profileDescription.textContent = formDescription.value;
+    profileName.textContent = inputName.value;
+    profileDescription.textContent = inputDescription.value;
     closePopup();
 };
 
