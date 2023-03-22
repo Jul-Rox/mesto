@@ -30,7 +30,7 @@
 @media screen and (max-width: 420px) {
   .profile__edit {
     justify-content: center;
-    transform: translateX(15px) translateY(7px);
+    transform: translateX(-2px) translateY(7px);
     background-size: 7px 7px;
 }
 }
