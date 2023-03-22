@@ -38,7 +38,6 @@
     gap: 27px 0;
     grid-template-rows: 0fr 0fr 0fr;
     min-width: 282px;
-    justify-items: center;
     justify-content: center;
     grid-template-areas:
     "avatar avatar avatar avatar"
@@ -52,7 +51,6 @@
   .profile {
     padding-left: 19px;
     padding-right: 19px;
-    padding-top: 40px;
     padding-bottom: 36px;
   }
 }

@@ -22,7 +22,6 @@
 @media screen and (max-width: 420px) {
   .profile__info {
     justify-items: center;
-    justify-content: center;
     gap: 0px;
     min-width: 282px;
     padding-bottom: 5px;

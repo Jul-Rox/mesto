@@ -11,8 +11,6 @@
 @media screen and (max-width: 420px) {
   .header__logo {
     background: url(../../../image/logo\ smoll.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
     width: 100px;
     height: 25px;
 }
