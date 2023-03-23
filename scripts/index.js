@@ -11,10 +11,11 @@ const popupOpenButtonElement = document.querySelector(".profile__edit");// об�
 //popupOpenButtonElement.addEventListener("click", togglePopupVisibility); //здесь при нажатии на кнопку будет выполняться вышеупомянутая функция, для открытия формы
 
 const openPopup = function () {
-  popupElement.classList.add("popup_opened"); // функция открываем попап
-  console.log("Open popup clicked");
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent;
+  popupElement.classList.add("popup_opened"); // функция открываем попап
+  console.log("Open popup clicked");
+
 };
 
 //const closePopupClickOverlay = function(event) {
