@@ -38,14 +38,8 @@ const formElement = document.querySelector(".popup__form");// через documen
 // Находим поля формы в DOM
 const inputName = formElement.querySelector(".popup__name"); // обьявляю переменную для поля name
 const inputDescription = formElement.querySelector(".popup__description");// обьявляю переменную для поля description
-const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
-const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
-
-//popupOpenButtonElement.addEventListener("click" , function () {
-  //openPopup();
- // inputName.value = profileName.textContent; // связала форму и поля для изменений
- // inputDescription.value = profileDescription.textContent; // связала форму и поля для изменений
-//});
+const profileName = document.querySelector(".popup__input_name"); // обьявляю переменную для строки изменения
+const profileDescription = document.querySelector(".popup__input_description"); // обьявляю переменную для строки изменения
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
@@ -60,3 +54,37 @@ function handleFormSubmit (evt) {
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit);
+
+//ПР5
+//форма для добавления карточки
+const inputLink = formElement.querySelector()
+
+
+
+
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
