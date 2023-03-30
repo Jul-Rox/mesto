@@ -84,12 +84,12 @@ const initialCards = [
 
 const element = document.querySelector('.element');
 
-function createCard(element__box) {
+function createCard(card) {
   const newCard = document.querySelector('#card').content.cloneNode(true)
   const nameCard = newCard.querySelector('.element__title')
-  nameCard.textContent = element__box.name
+  nameCard.textContent = card.name
   const imageCard = newCard.querySelector('.element__img')
-  imageCard.setAttribute('src', element__box.link)
+  imageCard.setAttribute('src', card.link)
   const deliteButtonCard = newCard.querySelector('.element__button-delited')
   deliteButtonCard.addEventListener('click', handleDeliteButtonClick)
   element.append(newCard)
