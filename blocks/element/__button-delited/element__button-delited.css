@@ -1,0 +1,12 @@
+.element__button-delited {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: url(../../../image/delite.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  border: none;
+  width: 18px;
+  height: 19px;
+}

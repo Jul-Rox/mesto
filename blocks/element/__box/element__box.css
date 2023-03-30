@@ -1,4 +1,5 @@
 .element__box {
+  position: relative;
   min-height: 361px;
   min-width: 282px;
   background-color: white;

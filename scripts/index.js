@@ -1,7 +1,8 @@
-const popupElement = document.querySelector(".popup_profile");// через document обозначаю блок, который мне нужен
+const popupElementProfile = document.querySelector(".popup_profile");// через document обозначаю блок, который мне нужен
 
-const popupCloseButtonElement = popupElement.querySelector(".popup__close"); //обозначаю кнопку в уже вбранном блоке
-const popupOpenButtonElement = document.querySelector(".profile__edit");// обьявляю делаю через document, т.к. элемент находится в другом блоке
+const popupCloseButtonElementEdit = popupElementProfile.querySelector(".popup__close"); //обозначаю кнопку в уже вбранном блоке
+const popupOpenButtonElementEdit = document.querySelector(".profile__edit");// обьявляю делаю через document, т.к. элемент находится в другом блоке
+
 
 
 // функция первая, она работает в одну сторону чтобы открыть
@@ -10,10 +11,10 @@ const popupOpenButtonElement = document.querySelector(".profile__edit");// об�
 //}; // действие toggle позволяет добавлять класс popup_opened для открытия формы
 //popupOpenButtonElement.addEventListener("click", togglePopupVisibility); //здесь при нажатии на кнопку будет выполняться вышеупомянутая функция, для открытия формы
 
-const openPopup = function () {
+const openPopupProfile = function () {
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent;
-  popupElement.classList.add("popup_opened"); // функция открываем попап
+  popupElementProfile.classList.add("popup_opened"); // функция открываем попап
   console.log("Open popup clicked");
 
 };
@@ -26,12 +27,12 @@ const openPopup = function () {
   //closePopup();
 //}; для того , чтобы форма закрывалась, если нажать на пустое место
 
-const closePopup = function () {
-  popupElement.classList.remove("popup_opened"); // функция закрываем попап
+const closePopupProfile = function () {
+  popupElementProfile.classList.remove("popup_opened"); // функция закрываем попап
 };
 
-popupOpenButtonElement.addEventListener("click", openPopup);// действие при нажатии открыть
-popupCloseButtonElement.addEventListener("click", closePopup);// действие при нажатии закрыть
+popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
+popupCloseButtonElementEdit.addEventListener("click", closePopupProfile);// действие при нажатии закрыть
 
 // Находим форму в DOM
 const formElement = document.querySelector(".popup__form");// через document обозначаю блок, который мне нужен
@@ -43,12 +44,9 @@ const profileDescription = document.querySelector(".profile__description"); // �
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    //formName.value;                       // Так мы можем определить свою логику отправки.
-    //formDescription.value;                         // О том, как это делать, расскажем позже.
-
     profileName.textContent = inputName.value;
     profileDescription.textContent = inputDescription.value;
-    closePopup();
+    closePopupProfile();
 };
 
 // Прикрепляем обработчик к форме:
@@ -57,11 +55,37 @@ formElement.addEventListener('submit', handleFormSubmit);
 
 //ПР5
 //форма для добавления карточки
-const inputLink = formElement.querySelector()
+const popupElementPlace = document.querySelector(".popup_place");
+const popupOpenButtonElementAdd = document.querySelector(".profile__add");
+const popupCloseButtonElementAdd = popupElementPlace.querySelector(".popup__close");
+const formElementAdd = document.querySelector(".popup__form");
+const inputText = document.querySelector(".popup__input_text");
+const inputLink = document.querySelector(".popup__input_link");
+const titleElement = document.querySelector(".element__title");
+const imageElement = document.querySelector(".element__img");
 
+const openPopupPlace = function () {
+  inputText.value = titleElement.textContent;
+  inputLink.value = imageElement.textContent;
+  popupElementPlace.classList.add("popup_opened");
+  console.log("Open popup clicked");
+};
 
+const closePopupPlace = function () {
+  popupElementPlace.classList.remove("popup_opened");
+};
 
+popupOpenButtonElementAdd.addEventListener("click", openPopupPlace);
+popupCloseButtonElementAdd.addEventListener("click", closePopupPlace);
 
+function handleFormSubmit (evt) {
+  evt.preventDefault();
+  titleElement.textContent = inputText.value;
+  imageElement.textContent = inputLink.value;
+  closePopupPlace();
+};
+formElementAdd.addEventListener('submit', handleFormSubmit);
+/**
 const initialCards = [
   {
     name: 'Архыз',
@@ -88,3 +112,4 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+**/
