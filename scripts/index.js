@@ -54,6 +54,58 @@ function handleFormSubmit (evt) {
 formElement.addEventListener('submit', handleFormSubmit);
 
 //ПР5
+//добавление карточек
+const initialCards = [
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
+
+const element = document.querySelector('.element');
+
+function createCard(element__box) {
+  const newCard = document.querySelector('#card').content.cloneNode(true)
+  const nameCard = newCard.querySelector('.element__title')
+  nameCard.textContent = element__box.name
+  const imageCard = newCard.querySelector('.element__img')
+  imageCard.setAttribute('src', element__box.link)
+  const deliteButtonCard = newCard.querySelector('.element__button-delited')
+  deliteButtonCard.addEventListener('click', handleDeliteButtonClick)
+  element.append(newCard)
+}
+
+initialCards.forEach(createCard)
+
+
+function handleDeliteButtonClick(event) {
+  const buttonDelite = event.target
+  const cardElement = buttonDelite.closest('.element__box')
+  cardElement.remove()
+};
+
+
+
 //форма для добавления карточки
 const popupElementPlace = document.querySelector(".popup_place");
 const popupOpenButtonElementAdd = document.querySelector(".profile__add");
@@ -85,31 +137,3 @@ function handleFormSubmit (evt) {
   closePopupPlace();
 };
 formElementAdd.addEventListener('submit', handleFormSubmit);
-/**
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-**/
