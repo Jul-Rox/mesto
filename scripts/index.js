@@ -81,7 +81,7 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-
+//карточки и удажление карточки
 const element = document.querySelector('.element');
 
 function createCard(card) {
@@ -93,32 +93,47 @@ function createCard(card) {
   const deliteButtonCard = newCard.querySelector('.element__button-delited')
   deliteButtonCard.addEventListener('click', handleDeliteButtonClick)
   element.append(newCard)
-}
+};
 
-initialCards.forEach(createCard)
+initialCards.forEach(createCard);
 
 
-function handleDeliteButtonClick(event) {
-  const buttonDelite = event.target
+function handleDeliteButtonClick(evt) {
+  const buttonDelite = evt.target
   const cardElement = buttonDelite.closest('.element__box')
   cardElement.remove()
 };
 
+//добавление новой карточки
+const formElementAdd = document.querySelector(".popup__form");
+
+
+
+function handleFormAddSubmit(evt) {
+  evt.preventDefault();
+  //const formElementAdd = evt.target
+  //const inputText = formElementAdd.querySelector(".popup__input_text").value
+  //const inputLink = formElementAdd.querySelector(".popup__input_link").value
+  //const card = { inputText, inputLink }
+  //createCard(card)
+};
+
+formElementAdd.addEventListener("submit", handleFormAddSubmit);
 
 
 //форма для добавления карточки
 const popupElementPlace = document.querySelector(".popup_place");
 const popupOpenButtonElementAdd = document.querySelector(".profile__add");
 const popupCloseButtonElementAdd = popupElementPlace.querySelector(".popup__close");
-const formElementAdd = document.querySelector(".popup__form");
-const inputText = document.querySelector(".popup__input_text");
-const inputLink = document.querySelector(".popup__input_link");
-const titleElement = document.querySelector(".element__title");
-const imageElement = document.querySelector(".element__img");
+
+
+
+//const titleElement = document.querySelector(".element__title");
+//const imageElement = document.querySelector(".element__img");
 
 const openPopupPlace = function () {
-  inputText.value = titleElement.textContent;
-  inputLink.value = imageElement.textContent;
+  //inputText.value = titleElement.textContent;
+  //inputLink.value = imageElement.textContent;
   popupElementPlace.classList.add("popup_opened");
   console.log("Open popup clicked");
 };
@@ -130,10 +145,13 @@ const closePopupPlace = function () {
 popupOpenButtonElementAdd.addEventListener("click", openPopupPlace);
 popupCloseButtonElementAdd.addEventListener("click", closePopupPlace);
 
-function handleFormSubmit (evt) {
+/*function handleFormAddSubmit (evt) {
   evt.preventDefault();
   titleElement.textContent = inputText.value;
   imageElement.textContent = inputLink.value;
   closePopupPlace();
-};
-formElementAdd.addEventListener('submit', handleFormSubmit);
+};*/
+
+
+
+
