@@ -1,4 +1,4 @@
-const popupElement = document.querySelector(".popup");// через document обозначаю блок, который мне нужен
+const popupElement = document.querySelector(".popup_profile");// через document обозначаю блок, который мне нужен
 
 const popupCloseButtonElement = popupElement.querySelector(".popup__close"); //обозначаю кнопку в уже вбранном блоке
 const popupOpenButtonElement = document.querySelector(".profile__edit");// обьявляю делаю через document, т.к. элемент находится в другом блоке
@@ -36,10 +36,10 @@ popupCloseButtonElement.addEventListener("click", closePopup);// действи�
 // Находим форму в DOM
 const formElement = document.querySelector(".popup__form");// через document обозначаю блок, который мне нужен
 // Находим поля формы в DOM
-const inputName = formElement.querySelector(".popup__name"); // обьявляю переменную для поля name
-const inputDescription = formElement.querySelector(".popup__description");// обьявляю переменную для поля description
-const profileName = document.querySelector(".popup__input_name"); // обьявляю переменную для строки изменения
-const profileDescription = document.querySelector(".popup__input_description"); // обьявляю переменную для строки изменения
+const inputName = formElement.querySelector(".popup__input_name"); // обьявляю переменную для поля name
+const inputDescription = formElement.querySelector(".popup__input_description");// обьявляю переменную для поля description
+const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
+const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
 
 function handleFormSubmit (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
