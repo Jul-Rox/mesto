@@ -90,6 +90,7 @@ const createCard = (card) => {
   const imageCard = newCard.querySelector('.element__img')
   imageCard.setAttribute('src', card.link)
 
+
   const nameCard = newCard.querySelector('.element__title')
   nameCard.textContent = card.name
 
@@ -123,7 +124,7 @@ function handleFormAddSubmit(event) {
   const card = { name: inputText, link: inputLink }
   const newCard = createCard(card)
   element.prepend(newCard)
-  popupCloseButtonElementAdd()
+  closePopupPlace()
   createCard(card)
 };
 
