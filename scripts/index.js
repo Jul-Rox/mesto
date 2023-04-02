@@ -95,6 +95,11 @@ const createCard = (card) => {
 
   const deliteButtonCard = newCard.querySelector('.element__button-delited')
   deliteButtonCard.addEventListener('click', handleDeliteButtonClick)
+
+  const likeButton = newCard.querySelector('.element__button-like')
+  likeButton.addEventListener('click', () => {
+    likeButton.classList.toggle('element__button-like_active');
+  });
   //element.append(newCard)
   return newCard;
 };
