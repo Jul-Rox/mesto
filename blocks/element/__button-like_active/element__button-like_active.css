@@ -1,8 +1,4 @@
 .element__button-like_active {
   background: url(../../../image/blackLike.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  min-width: 22px;
-  height: 19px;
-
+  
 }
