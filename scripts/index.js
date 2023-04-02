@@ -35,7 +35,7 @@ popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// дей
 popupCloseButtonElementEdit.addEventListener("click", closePopupProfile);// действие при нажатии закрыть
 
 // Находим форму в DOM
-const formElement = document.querySelector(".popup__form");// через document обозначаю блок, который мне нужен
+const formElement = document.querySelector(".popup__form_profile");// через document обозначаю блок, который мне нужен
 // Находим поля формы в DOM
 const inputName = formElement.querySelector(".popup__input_name"); // обьявляю переменную для поля name
 const inputDescription = formElement.querySelector(".popup__input_description");// обьявляю переменную для поля description
@@ -81,44 +81,55 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
-//карточки и удажление карточки
+//карточки и удаление карточки
 const element = document.querySelector('.element');
 
-function createCard(card) {
+const createCard = (card) => {
   const newCard = document.querySelector('#card').content.cloneNode(true)
-  const nameCard = newCard.querySelector('.element__title')
-  nameCard.textContent = card.name
+
   const imageCard = newCard.querySelector('.element__img')
   imageCard.setAttribute('src', card.link)
+
+  const nameCard = newCard.querySelector('.element__title')
+  nameCard.textContent = card.name
+
   const deliteButtonCard = newCard.querySelector('.element__button-delited')
   deliteButtonCard.addEventListener('click', handleDeliteButtonClick)
-  element.append(newCard)
+  //element.append(newCard)
+  return newCard;
 };
 
-initialCards.forEach(createCard);
+initialCards.forEach(card => {
+  newCard = createCard(card)
+  element.append(newCard)
+});
 
 
+//добавление новой карточки
+const formElementAdd = document.querySelector(".popup__form_place");
+formElementAdd.addEventListener("submit", handleFormAddSubmit);
+
+
+function handleFormAddSubmit(event) {
+  event.preventDefault()
+  const formElementAdd = event.target
+  const inputText = formElementAdd.querySelector(".popup__input_text").value
+  const inputLink = formElementAdd.querySelector(".popup__input_link").value
+  const card = { name: inputText, link: inputLink }
+  const newCard = createCard(card)
+  element.prepend(newCard)
+  popupCloseButtonElementAdd()
+  createCard(card)
+};
+
+//удаление карточки
 function handleDeliteButtonClick(evt) {
   const buttonDelite = evt.target
   const cardElement = buttonDelite.closest('.element__box')
   cardElement.remove()
 };
 
-//добавление новой карточки
-const formElementAdd = document.querySelector(".popup__form");
 
-
-
-function handleFormAddSubmit(evt) {
-  evt.preventDefault();
-  //const formElementAdd = evt.target
-  //const inputText = formElementAdd.querySelector(".popup__input_text").value
-  //const inputLink = formElementAdd.querySelector(".popup__input_link").value
-  //const card = { inputText, inputLink }
-  //createCard(card)
-};
-
-formElementAdd.addEventListener("submit", handleFormAddSubmit);
 
 
 //форма для добавления карточки
