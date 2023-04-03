@@ -186,7 +186,9 @@ const imageCardElement = document.querySelector(".element")//действующ�
 //const popupOpenElementImg = document.querySelector(".element__img");//переменная открытия при нажетии на карточку
 
 
-const openPopupImg = function() {
+const openPopupImg = function(evt) {
+
+  const popupBigImg = evt.target;
   imageCardElement.src = popupBigImg.src; // связала картинку из карточки на вывод в форму
   nameCard.textContent = titleImg.textContent; // связала два зоголовка при открытии
   popupElementImg.classList.add("popup_opened"); // функция открываем попап
