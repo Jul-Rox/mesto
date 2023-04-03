@@ -1,5 +1,4 @@
 const popupElementProfile = document.querySelector(".popup_profile");// через document обозначаю блок, который мне нужен
-
 const popupCloseButtonElementEdit = popupElementProfile.querySelector(".popup__close"); //обозначаю кнопку в уже вбранном блоке
 const popupOpenButtonElementEdit = document.querySelector(".profile__edit");// обьявляю делаю через document, т.к. элемент находится в другом блоке
 
@@ -126,6 +125,7 @@ function handleFormAddSubmit(event) {
   element.prepend(newCard)
   closePopupPlace()
   createCard(card)
+  
 };
 
 //удаление карточки
@@ -170,5 +170,46 @@ popupCloseButtonElementAdd.addEventListener("click", closePopupPlace);
 };*/
 
 
+//открытие картинки попапа
+
+const popupElementImg = document.querySelector(".popup_big-img");//переменная формы
 
 
+
+const titleImg = document.querySelector(".popup__title_big-img"); // переменная заголовок картинки при открытии
+
+const nameCard = document.querySelector(".element__title"); //переменная заголовок действующей карточки
+
+const popupBigImg = document.querySelector(".popup__img");//переменная увеличенной картинки
+
+const imageCardElement = document.querySelector(".element")//действующая картинка в карточке
+
+//const popupOpenElementImg = document.querySelector(".element__img");//переменная открытия при нажетии на карточку
+
+
+const openPopupImg = function() {
+  imageCardElement.src = popupBigImg.src; // связала картинку из карточки на вывод в форму
+  nameCard.textContent = titleImg.textContent; // связала два зоголовка при открытии
+  popupElementImg.classList.add("popup_opened"); // функция открываем попап
+};
+
+const popupCloseButtonElementImg = document.querySelector(".popup__close");//переменная закрытия
+imageCardElement.addEventListener("click", openPopupImg);// действие при нажатии открыть
+
+
+const closePopupImg = function () {
+  popupElementImg.classList.remove("popup_opened")  // функция закрываем попап
+};
+popupCloseButtonElementImg.addEventListener("click", closePopupImg);// действие при нажатии закрыть
+
+
+//const containerImg = document.querySelector(".popup__container_big-img");
+
+/*function handleImgSubmit (evt) {
+  evt.preventDefault();
+  popupBigImg.src = imageCardElement.src;
+  titleImg.textContent = nameCard.textContent;
+  closePopupImg();
+};
+
+containerImg.addEventListener('submit', handleImgSubmit);*/
