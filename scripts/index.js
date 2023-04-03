@@ -125,7 +125,7 @@ function handleFormAddSubmit(event) {
   element.prepend(newCard)
   closePopupPlace()
   createCard(card)
-  
+
 };
 
 //удаление карточки
@@ -175,12 +175,11 @@ popupCloseButtonElementAdd.addEventListener("click", closePopupPlace);
 const popupElementImg = document.querySelector(".popup_big-img");//переменная формы
 
 
-
 const titleImg = document.querySelector(".popup__title_big-img"); // переменная заголовок картинки при открытии
 
 const nameCard = document.querySelector(".element__title"); //переменная заголовок действующей карточки
 
-const popupBigImg = document.querySelector(".popup__img");//переменная увеличенной картинки
+const popupBigImg = document.querySelector(".popup__container_big-img");//переменная увеличенной картинки
 
 const imageCardElement = document.querySelector(".element")//действующая картинка в карточке
 
