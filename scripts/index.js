@@ -89,7 +89,6 @@ const createCard = (card) => {
   const imageCard = newCard.querySelector('.element__img')
   imageCard.setAttribute('src', card.link)
 
-
   const nameCard = newCard.querySelector('.element__title')
   nameCard.textContent = card.name
 
@@ -98,9 +97,9 @@ const createCard = (card) => {
 
   const likeButton = newCard.querySelector('.element__button-like')
   likeButton.addEventListener('click', () => {
-    likeButton.classList.toggle('element__button-like_active');
+  likeButton.classList.toggle('element__button-like_active');
+
   });
-  //element.append(newCard)
   return newCard;
 };
 
@@ -125,7 +124,10 @@ function handleFormAddSubmit(event) {
   element.prepend(newCard)
   closePopupPlace()
   createCard(card)
+  
+  openPopupBigCard()
 
+  return createCard;
 };
 
 //удаление карточки
@@ -144,13 +146,8 @@ const popupOpenButtonElementAdd = document.querySelector(".profile__add");
 const popupCloseButtonElementAdd = popupElementPlace.querySelector(".popup__close");
 
 
-
-//const titleElement = document.querySelector(".element__title");
-//const imageElement = document.querySelector(".element__img");
-
 const openPopupPlace = function () {
-  //inputText.value = titleElement.textContent;
-  //inputLink.value = imageElement.textContent;
+
   popupElementPlace.classList.add("popup_opened");
   console.log("Open popup clicked");
 };
@@ -162,55 +159,33 @@ const closePopupPlace = function () {
 popupOpenButtonElementAdd.addEventListener("click", openPopupPlace);
 popupCloseButtonElementAdd.addEventListener("click", closePopupPlace);
 
-/*function handleFormAddSubmit (evt) {
-  evt.preventDefault();
-  titleElement.textContent = inputText.value;
-  imageElement.textContent = inputLink.value;
-  closePopupPlace();
-};*/
 
 
 //открытие картинки попапа
-
-const popupElementImg = document.querySelector(".popup_big-img");//переменная формы
-
-
+function openPopupBigCard() {
+const popupElementImg = document.querySelector("#popupImg");//переменная формы
 const titleImg = document.querySelector(".popup__title_big-img"); // переменная заголовок картинки при открытии
-
-const nameCard = document.querySelector(".element__title"); //переменная заголовок действующей карточки
-
-const popupBigImg = document.querySelector(".popup__container_big-img");//переменная увеличенной картинки
-
-const imageCardElement = document.querySelector(".element")//действующая картинка в карточке
-
-//const popupOpenElementImg = document.querySelector(".element__img");//переменная открытия при нажетии на карточку
-
+const popupBigImg = document.querySelector(".popup__img");//переменная увеличенной картинки
+const popupCloseButtonElementImg = popupElementImg.querySelector(".popup__close");//переменная закрытия
 
 const openPopupImg = function(evt) {
-
-  const popupBigImg = evt.target;
-  imageCardElement.src = popupBigImg.src; // связала картинку из карточки на вывод в форму
-  nameCard.textContent = titleImg.textContent; // связала два зоголовка при открытии
   popupElementImg.classList.add("popup_opened"); // функция открываем попап
+  const openPopupBigImg = evt.target;
+  popupBigImg.src = openPopupBigImg.src; // связала картинку из карточки на вывод в форму
+  titleImg.textContent = openPopupBigImg.parentNode.querySelector('.element__title').textContent; // связала два зоголовка при открытии
+
 };
-
-const popupCloseButtonElementImg = document.querySelector(".popup__close");//переменная закрытия
-imageCardElement.addEventListener("click", openPopupImg);// действие при нажатии открыть
-
 
 const closePopupImg = function () {
   popupElementImg.classList.remove("popup_opened")  // функция закрываем попап
 };
+
+const hendleImgButton = document.querySelectorAll('.element__image');
+hendleImgButton.forEach(function (openPopupBigImg) {
+openPopupBigImg.addEventListener('click', openPopupImg);
+});
+
 popupCloseButtonElementImg.addEventListener("click", closePopupImg);// действие при нажатии закрыть
+}
 
 
-//const containerImg = document.querySelector(".popup__container_big-img");
-
-/*function handleImgSubmit (evt) {
-  evt.preventDefault();
-  popupBigImg.src = imageCardElement.src;
-  titleImg.textContent = nameCard.textContent;
-  closePopupImg();
-};
-
-containerImg.addEventListener('submit', handleImgSubmit);*/
