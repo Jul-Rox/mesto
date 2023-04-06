@@ -123,8 +123,8 @@ function handleFormAddSubmit(event) {
   const newCard = createCard(card)
   element.prepend(newCard)
   closePopupPlace()
-  createCard(card)
-  
+  //createCard(card)
+
   openPopupBigCard()
 
   return createCard;
@@ -162,30 +162,35 @@ popupCloseButtonElementAdd.addEventListener("click", closePopupPlace);
 
 
 //открытие картинки попапа
-function openPopupBigCard() {
 const popupElementImg = document.querySelector("#popupImg");//переменная формы
 const titleImg = document.querySelector(".popup__title_big-img"); // переменная заголовок картинки при открытии
 const popupBigImg = document.querySelector(".popup__img");//переменная увеличенной картинки
 const popupCloseButtonElementImg = popupElementImg.querySelector(".popup__close");//переменная закрытия
+
+function openPopupBigCard() {
 
 const openPopupImg = function(evt) {
   popupElementImg.classList.add("popup_opened"); // функция открываем попап
   const openPopupBigImg = evt.target;
   popupBigImg.src = openPopupBigImg.src; // связала картинку из карточки на вывод в форму
   titleImg.textContent = openPopupBigImg.parentNode.querySelector('.element__title').textContent; // связала два зоголовка при открытии
-
 };
-
-const closePopupImg = function () {
-  popupElementImg.classList.remove("popup_opened")  // функция закрываем попап
-};
+//const closePopupImg = function () {
+  //popupElementImg.classList.remove("popup_opened")  // функция закрываем попап
+//};
 
 const hendleImgButton = document.querySelectorAll('.element__image');
 hendleImgButton.forEach(function (openPopupBigImg) {
 openPopupBigImg.addEventListener('click', openPopupImg);
 });
-
-popupCloseButtonElementImg.addEventListener("click", closePopupImg);// действие при нажатии закрыть
+//popupCloseButtonElementImg.addEventListener("click", closePopupImg);// действие при нажатии закрыть
 }
 
-
+const openPopupImg = function () {
+  popupElementImg.classList.add("popup_opened"); // функция открываем попап
+};
+const closePopupImg = function () {
+  popupElementImg.classList.remove("popup_opened"); // функция закрываем попап
+};
+popupElementImg.addEventListener("click", openPopupImg);// действие при нажатии открыть
+popupElementImg.addEventListener("click", closePopupImg);// действие при нажатии закрыть
