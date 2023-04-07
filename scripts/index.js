@@ -1,37 +1,7 @@
 const popupElementProfile = document.querySelector(".popup_profile");// через document обозначаю блок, который мне нужен
-const popupCloseButtonElementEdit = popupElementProfile.querySelector(".popup__close"); //обозначаю кнопку в уже вбранном блоке
+//const popupCloseButtonElement = document.querySelector(".popup__close"); //обозначаю кнопку в уже вбранном блоке
 const popupOpenButtonElementEdit = document.querySelector(".profile__edit");// обьявляю делаю через document, т.к. элемент находится в другом блоке
 
-
-
-// функция первая, она работает в одну сторону чтобы открыть
-//const togglePopupVisibility = function () {
-  //popupElement.classList.toggle("popup_opened");
-//}; // действие toggle позволяет добавлять класс popup_opened для открытия формы
-//popupOpenButtonElement.addEventListener("click", togglePopupVisibility); //здесь при нажатии на кнопку будет выполняться вышеупомянутая функция, для открытия формы
-
-const openPopupProfile = function () {
-  inputName.value = profileName.textContent; // связала форму и поля для изменений
-  inputDescription.value = profileDescription.textContent;
-  popupElementProfile.classList.add("popup_opened"); // функция открываем попап
-  console.log("Open popup clicked");
-
-};
-
-//const closePopupClickOverlay = function(event) {
-  //console.log ("event.target, event.currentTarget");
-  //if (event.target !== event.currentTarget) {
-   // return;
- // }
-  //closePopup();
-//}; для того , чтобы форма закрывалась, если нажать на пустое место
-
-const closePopupProfile = function () {
-  popupElementProfile.classList.remove("popup_opened"); // функция закрываем попап
-};
-
-popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
-popupCloseButtonElementEdit.addEventListener("click", closePopupProfile);// действие при нажатии закрыть
 
 // Находим форму в DOM
 const formElement = document.querySelector(".popup__form_profile");// через document обозначаю блок, который мне нужен
@@ -41,16 +11,55 @@ const inputDescription = formElement.querySelector(".popup__input_description");
 const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
 const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
 
+const popupImage = document.querySelector("#popupImg");
+const popupImageImg = popupImage.querySelector(".popup__img");
+const popupImageText = popupImage.querySelector(".popup__title-big-img");
+
+
+const openPopupProfile = function () {
+  openPopup(popupElementProfile);
+  inputName.value = profileName.textContent; // связала форму и поля для изменений
+  inputDescription.value = profileDescription.textContent;
+};
+
+//открытие
+const openPopup = (popup) => {
+  popup.classList.add('popup_opened');
+}
+popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
+
+//const closePopupClickOverlay = function(event) {
+  //console.log ("event.target, event.currentTarget");
+  //if (event.target !== event.currentTarget) {
+   // return;
+ // }
+  //closePopup();
+//}; для того , чтобы форма закрывалась, если нажать на пустое место
+
 function handleFormSubmit (evt) {
     evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
     profileName.textContent = inputName.value;
     profileDescription.textContent = inputDescription.value;
-    closePopupProfile();
+    closePopup(popupElementProfile);
 };
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 formElement.addEventListener('submit', handleFormSubmit);
+
+// Функция закрытия попапа
+const closePopup = (popup) => {
+  popup.classList.remove('popup_opened');
+}
+
+const popupCloseButtonElement = document.querySelectorAll(".popup__close"); //обозначаю кнопку в уже вбранном блоке
+
+popupCloseButtonElement.forEach((button) => {
+  const popup = button.closest('.popup');
+  button.addEventListener('click', () => closePopup(popup));
+});
+
+
 
 //ПР5
 //добавление карточек
@@ -80,6 +89,7 @@ const initialCards = [
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
   }
 ];
+
 //карточки и удаление карточки
 const element = document.querySelector('.element');
 
@@ -98,20 +108,47 @@ const createCard = (card) => {
   const likeButton = newCard.querySelector('.element__button-like')
   likeButton.addEventListener('click', () => {
   likeButton.classList.toggle('element__button-like_active');
-
   });
+
+  const cardImage = newCard.querySelector('.element__img');
+  cardImage.addEventListener('click', () => {
+  popupElementImgBig(card)
+  })
   return newCard;
 };
 
+
+//удаление карточки
+function handleDeliteButtonClick(evt) {
+  const buttonDelite = evt.target
+  const cardElement = buttonDelite.closest('.element__box')
+  cardElement.remove()
+};
+
 initialCards.forEach(card => {
-  newCard = createCard(card)
-  element.append(newCard)
+  const newItemCard = createCard(card);
+  element.append(newItemCard);
 });
+
+
+//функция для увеличения карточки
+function popupElementImgBig(card) {
+    popupImageImg.src = card.link
+
+    popupImageText.textContent = card.name
+
+    openPopupImg(popupImage)
+};
+
+const openPopupImg = function () {
+  openPopup(popupImage); // функция открываем попап
+};
 
 
 //добавление новой карточки
 const formElementAdd = document.querySelector(".popup__form_place");
 formElementAdd.addEventListener("submit", handleFormAddSubmit);
+
 
 
 function handleFormAddSubmit(event) {
@@ -123,74 +160,23 @@ function handleFormAddSubmit(event) {
   const newCard = createCard(card)
   element.prepend(newCard)
   closePopupPlace()
-  //createCard(card)
-
-  openPopupBigCard()
-
   return createCard;
 };
-
-//удаление карточки
-function handleDeliteButtonClick(evt) {
-  const buttonDelite = evt.target
-  const cardElement = buttonDelite.closest('.element__box')
-  cardElement.remove()
-};
-
-
 
 
 //форма для добавления карточки
 const popupElementPlace = document.querySelector(".popup_place");
 const popupOpenButtonElementAdd = document.querySelector(".profile__add");
-const popupCloseButtonElementAdd = popupElementPlace.querySelector(".popup__close");
-
 
 const openPopupPlace = function () {
-
-  popupElementPlace.classList.add("popup_opened");
-  console.log("Open popup clicked");
+  openPopup(popupElementPlace);
 };
 
 const closePopupPlace = function () {
-  popupElementPlace.classList.remove("popup_opened");
+  closePopup(popupElementPlace);
 };
-
 popupOpenButtonElementAdd.addEventListener("click", openPopupPlace);
-popupCloseButtonElementAdd.addEventListener("click", closePopupPlace);
 
 
 
-//открытие картинки попапа
-const popupElementImg = document.querySelector("#popupImg");//переменная формы
-const titleImg = document.querySelector(".popup__title_big-img"); // переменная заголовок картинки при открытии
-const popupBigImg = document.querySelector(".popup__img");//переменная увеличенной картинки
-const popupCloseButtonElementImg = popupElementImg.querySelector(".popup__close");//переменная закрытия
 
-function openPopupBigCard() {
-
-const openPopupImg = function(evt) {
-  popupElementImg.classList.add("popup_opened"); // функция открываем попап
-  const openPopupBigImg = evt.target;
-  popupBigImg.src = openPopupBigImg.src; // связала картинку из карточки на вывод в форму
-  titleImg.textContent = openPopupBigImg.parentNode.querySelector('.element__title').textContent; // связала два зоголовка при открытии
-};
-//const closePopupImg = function () {
-  //popupElementImg.classList.remove("popup_opened")  // функция закрываем попап
-//};
-
-const hendleImgButton = document.querySelectorAll('.element__image');
-hendleImgButton.forEach(function (openPopupBigImg) {
-openPopupBigImg.addEventListener('click', openPopupImg);
-});
-//popupCloseButtonElementImg.addEventListener("click", closePopupImg);// действие при нажатии закрыть
-}
-
-const openPopupImg = function () {
-  popupElementImg.classList.add("popup_opened"); // функция открываем попап
-};
-const closePopupImg = function () {
-  popupElementImg.classList.remove("popup_opened"); // функция закрываем попап
-};
-popupElementImg.addEventListener("click", openPopupImg);// действие при нажатии открыть
-popupElementImg.addEventListener("click", closePopupImg);// действие при нажатии закрыть
