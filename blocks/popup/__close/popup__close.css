@@ -20,13 +20,15 @@
 
 @media screen and (max-width: 840px) {
   .popup__close {
-    right: 35px;
+    transform: translateX(15px);
+    right: 10px;
     margin-bottom: 16px;
   }
 }
 
 @media screen and (max-width: 478px) {
   .popup__close {
+    transform: translateX(35px);
     right: 40px;
     width: 20px;
     height: 20px;

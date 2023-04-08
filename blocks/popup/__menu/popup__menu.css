@@ -6,3 +6,13 @@
   max-width: 358px;
   border: none;
 }
+
+
+
+
+@media screen and (max-width: 478px) {
+  .popup__menu {
+    padding-top: 75px;
+    padding-bottom: 45px;
+  }
+}
