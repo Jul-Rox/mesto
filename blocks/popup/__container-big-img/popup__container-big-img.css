@@ -1,7 +1,17 @@
 .popup__container-big-img {
   color: #fff;
-  max-width: 75vw;
-  max-height: 75vh;
-  object-fit: contain;
   background-color: transparent;
+  position: fixed;
+
+}
+
+
+@media screen and (max-width: 478px) {
+  .popup__container-big-img {
+    display: flex;
+    flex-direction: column;
+    max-width: 240px;
+    justify-content: center;
+    width: 100%;
+  }
 }
