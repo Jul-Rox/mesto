@@ -108,12 +108,12 @@ const createCard = (card) => {
 
   const likeButton = newCard.querySelector('.element__button-like')
   likeButton.addEventListener('click', () => {
-  likeButton.classList.toggle('element__button-like_active');
+    likeButton.classList.toggle('element__button-like_active');
   });
 
   const cardImage = newCard.querySelector('.element__img');
   cardImage.addEventListener('click', () => {
-  popupElementImgBig(card)
+   popupElementImgBig(card)
   })
   return newCard;
 };
