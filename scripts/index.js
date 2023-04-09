@@ -4,10 +4,10 @@ const popupOpenButtonElementEdit = document.querySelector(".profile__edit");// �
 
 
 // Находим форму в DOM
-const formElement = document.querySelector(".popup__form_profile");// через document обозначаю блок, который мне нужен
+const editProfilePopupForm = document.querySelector(".popup__form_profile");// через document обозначаю блок, который мне нужен
 // Находим поля формы в DOM
-const inputName = formElement.querySelector(".popup__input_name"); // обьявляю переменную для поля name
-const inputDescription = formElement.querySelector(".popup__input_description");// обьявляю переменную для поля description
+const inputName = editProfilePopupForm.querySelector(".popup__input_name"); // обьявляю переменную для поля name
+const inputDescription = editProfilePopupForm.querySelector(".popup__input_description");// обьявляю переменную для поля description
 const profileName = document.querySelector(".profile__name"); // обьявляю переменную для строки изменения
 const profileDescription = document.querySelector(".profile__description"); // обьявляю переменную для строки изменения
 
@@ -45,16 +45,16 @@ function handleFormSubmit (evt) {
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
-formElement.addEventListener('submit', handleFormSubmit);
+editProfilePopupForm.addEventListener('submit', handleFormSubmit);
 
 // Функция закрытия попапа
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
 }
 
-const popupCloseButtonElement = document.querySelectorAll(".popup__close"); //обозначаю кнопку в уже вбранном блоке
+const popupCloseButtonElementList = document.querySelectorAll(".popup__close"); //обозначаю кнопку в уже вбранном блоке
 
-popupCloseButtonElement.forEach((button) => {
+popupCloseButtonElementList.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
@@ -98,6 +98,7 @@ const createCard = (card) => {
 
   const imageCard = newCard.querySelector('.element__img')
   imageCard.setAttribute('src', card.link)
+  imageCard.setAttribute('alt', card.link)
 
   const nameCard = newCard.querySelector('.element__title')
   nameCard.textContent = card.name
@@ -117,7 +118,6 @@ const createCard = (card) => {
   return newCard;
 };
 
-
 //удаление карточки
 function handleDeliteButtonClick(evt) {
   const buttonDelite = evt.target
@@ -134,9 +134,8 @@ initialCards.forEach(card => {
 //функция для увеличения карточки
 function popupElementImgBig(card) {
     popupImageImg.src = card.link
-
     popupImageText.textContent = card.name
-
+    popupImageImg.alt = card.alt
     openPopupImg(popupImage)
 };
 
@@ -144,12 +143,9 @@ const openPopupImg = function () {
   openPopup(popupImage); // функция открываем попап
 };
 
-
 //добавление новой карточки
 const formElementAdd = document.querySelector(".popup__form_place");
 formElementAdd.addEventListener("submit", handleFormAddSubmit);
-
-
 
 function handleFormAddSubmit(event) {
   event.preventDefault()
@@ -176,7 +172,3 @@ const closePopupPlace = function () {
   closePopup(popupElementPlace);
 };
 popupOpenButtonElementAdd.addEventListener("click", openPopupPlace);
-
-
-
-
