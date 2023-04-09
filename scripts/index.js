@@ -133,10 +133,10 @@ initialCards.forEach(card => {
 
 //функция для увеличения карточки
 function popupElementImgBig(card) {
-    popupImageImg.src = card.link
-    popupImageText.textContent = card.name
-    popupImageImg.alt = card.alt
-    openPopupImg(popupImage)
+  popupImageImg.src = card.link
+  popupImageText.textContent = card.name
+  popupImageImg.alt = card.alt
+  openPopupImg(popupImage)
 };
 
 const openPopupImg = function () {
