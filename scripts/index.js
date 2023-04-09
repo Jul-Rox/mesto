@@ -113,7 +113,7 @@ const createCard = (card) => {
 
   const cardImage = newCard.querySelector('.element__img');
   cardImage.addEventListener('click', () => {
-   popupElementImgBig(card)
+    popupElementImgBig(card)
   })
   return newCard;
 };
