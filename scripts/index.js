@@ -1,9 +1,6 @@
 const popupElementProfile = document.querySelector(".popup_profile");// через document обозначаю блок, который мне нужен
 //const popupCloseButtonElement = document.querySelector(".popup__close"); //обозначаю кнопку в уже вбранном блоке
 const popupOpenButtonElementEdit = document.querySelector(".profile__edit");// обьявляю делаю через document, т.к. элемент находится в другом блоке
-
-
-// Находим форму в DOM
 const editProfilePopupForm = document.querySelector(".popup__form_profile");// через document обозначаю блок, который мне нужен
 // Находим поля формы в DOM
 const inputName = editProfilePopupForm.querySelector(".popup__input_name"); // обьявляю переменную для поля name
@@ -14,7 +11,6 @@ const profileDescription = document.querySelector(".profile__description"); // �
 const popupImage = document.querySelector("#popupImg");
 const popupImageImg = popupImage.querySelector(".popup__img");
 const popupImageText = popupImage.querySelector(".popup__title-big-img");
-
 
 const openPopupProfile = function () {
   openPopup(popupElementProfile);
@@ -53,14 +49,10 @@ const closePopup = (popup) => {
 }
 
 const popupCloseButtonElementList = document.querySelectorAll(".popup__close"); //обозначаю кнопку в уже вбранном блоке
-
 popupCloseButtonElementList.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
-
-
-
 //ПР5
 //добавление карточек
 const initialCards = [
@@ -92,7 +84,6 @@ const initialCards = [
 
 //карточки и удаление карточки
 const element = document.querySelector('.element');
-
 const createCard = (card) => {
   const newCard = document.querySelector('#card').content.cloneNode(true)
 
@@ -130,7 +121,6 @@ initialCards.forEach(card => {
   element.append(newItemCard);
 });
 
-
 //функция для увеличения карточки
 function popupElementImgBig(card) {
   popupImageImg.src = card.link
@@ -158,7 +148,6 @@ function handleFormAddSubmit(event) {
   closePopupPlace()
   return createCard;
 };
-
 
 //форма для добавления карточки
 const popupElementPlace = document.querySelector(".popup_place");
