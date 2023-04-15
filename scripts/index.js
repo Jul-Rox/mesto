@@ -12,38 +12,43 @@ const popupImage = document.querySelector("#popupImg");
 const popupImageImg = popupImage.querySelector(".popup__img");
 const popupImageText = popupImage.querySelector(".popup__title-big-img");
 
+
+
 const openPopupProfile = function () {
   openPopup(popupElementProfile);
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent;
 };
-
-//открытие
-const openPopup = (popup) => {
-  popup.classList.add('popup_opened');
-}
 popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
 
-//const closePopupClickOverlay = function(event) {
-  //console.log ("event.target, event.currentTarget");
-  //if (event.target !== event.currentTarget) {
-   // return;
- // }
-  //closePopup();
-//}; для того , чтобы форма закрывалась, если нажать на пустое место
-
 function handleFormSubmit (evt) {
-    evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
-    profileName.textContent = inputName.value;
-    profileDescription.textContent = inputDescription.value;
-    closePopup(popupElementProfile);
+  evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
+  profileName.textContent = inputName.value;
+  profileDescription.textContent = inputDescription.value;
+  closePopup(popupElementProfile);
 };
+
+//открытие функция общая
+const openPopup = (popup) => {
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
+
+  /*const enableValidation = ({
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'popup__error_visible'
+  });
+  validationConfig(enableValidation);*/
+}
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
 editProfilePopupForm.addEventListener('submit', handleFormSubmit);
 
-// Функция закрытия попапа
+// Функция закрытия попапа общая
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
 }
@@ -53,6 +58,27 @@ popupCloseButtonElementList.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
+
+//закрытие через overlay
+const popupAll = document.querySelectorAll('.popup');
+
+popupAll.forEach(popup => {
+  popup.addEventListener('click', (evt) => {
+    if (evt.target.classList.contains('popup_opened')) {
+    closePopup(popup);
+    }
+  });
+});
+
+//функция закрытия через Esc
+const closePopupEsc = function (evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup__opened');
+    closePopup(popupOpened);
+}
+}
+
+
 //ПР5
 //добавление карточек
 const initialCards = [
