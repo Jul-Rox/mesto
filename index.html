@@ -45,9 +45,9 @@
         <form class="popup__form popup__form_profile" name="profile" action="#" novalidate>
           <fieldset class="popup__menu">
             <input class="popup__input popup__input_name popup__input_type_error" id="username" required type="text" name="username" placeholder="Имя"  minlength="2" maxlength="40">
-            <span id="username-error" class="popup__error"></span>
+            <span id="username-error" class="popup__error popup__error_visible"></span>
             <input class="popup__input popup__input_description popup__input_type_error" required type="text" id="description" name="description" placeholder="Описание"  minlength="2" maxlength="200">
-            <span id="description-error" class="popup__error"></span>
+            <span id="description-error" class="popup__error popup__error_visible"></span>
           </fieldset>
           <button class="popup__button popup__button_active" type="submit" value="Submit">Сохранить</button>
         </form>
@@ -60,9 +60,9 @@
         <form class="popup__form popup__form_place" name="place" novalidate>
           <fieldset class="popup__menu">
             <input class="popup__input popup__input_text popup__input_type_error" required type="text" id="name-card" name="name-card" placeholder="Название места" minlength="2" maxlength="30">
-            <span id="name-card-error" class="popup__error"></span>
+            <span id="name-card-error" class="popup__error popup__error_visible"></span>
             <input class="popup__input popup__input_link popup__input_type_error" required type="url" id="link" name="link" placeholder="Ссылка на картинку">
-            <span id="link-error" class="popup__error"></span>
+            <span id="link-error" class="popup__error popup__error_visible"></span>
           </fieldset>
           <button class="popup__button popup__button_active" type="submit" value="Submit">Создать</button>
         </form>
@@ -75,7 +75,7 @@
         <h2 class="popup__title-big-img"></h2>
       </div>
     </div>
-    <script src="./scripts/validate.js"></script>
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js" defer></script>
+    <script src="./scripts/index.js" defer></script>
   </body>
 </html>

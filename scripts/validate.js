@@ -1,17 +1,5 @@
-
-enableValidation ({
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__button',
-  inactiveButtonClass: 'popup__button_disabled',
-  activeButtonClass: 'popup__button_active',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
-});
-
-
-function validationConfig({ formSelector, ...rest }) {
-  const forms = Array.form(document.querySelectorAll(formSelector));
+function enableValidation({ formSelector, ...rest }) {
+  const forms = Array.from(document.querySelectorAll(formSelector));
   console.log(rest)
   forms.forEach(form => {
     form.addEventListener('submit', (evt) => {
@@ -22,7 +10,7 @@ function validationConfig({ formSelector, ...rest }) {
 }
 
 function setEventListeners(formToValidate, { inputSelector, submitButtonSelector, ...rest }) {
-  const formInputs = Array.form(formToValidate.querySelectorAll(inputSelector));
+  const formInputs = Array.from(formToValidate.querySelectorAll(inputSelector));
   const formButton = formToValidate.querySelector(submitButtonSelector);
   disabledButton(formButton, rest);
 
@@ -64,4 +52,17 @@ const disabledButton = (button, { inactiveButtonClass, activeButtonClass }) => {
   button.removeAttribute('disabled');
 }
 
-validationConfig(enableValidation);
+/*const visibleError = (input, inputErrorConteiner, errorClass, inputErrorClass) => {
+  inputErrorConteiner.textContent = input.validationMessage;
+  inputErrorConteiner.classList.add(inputErrorClass);
+  input.classList.add(errorClass);
+}
+
+const hideError = (input, inputErrorConteiner, errorClass, inputErrorClass) => {
+  inputErrorConteiner.textContent = '';
+  inputErrorConteiner.classList.remove(inputErrorClass);
+  input.classList.remove(errorClass);
+}*/
+
+
+

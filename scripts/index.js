@@ -12,14 +12,25 @@ const popupImage = document.querySelector("#popupImg");
 const popupImageImg = popupImage.querySelector(".popup__img");
 const popupImageText = popupImage.querySelector(".popup__title-big-img");
 
+const validationConfig = ({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  activeButtonClass: 'popup__button_active',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+});
 
+enableValidation(validationConfig);
 
 const openPopupProfile = function () {
   openPopup(popupElementProfile);
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent;
-  validationConfig(enableValidation);
 };
+
+
 popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
 
 function handleFormSubmit (evt) {
