@@ -11,8 +11,6 @@ function enableValidation({ formSelector, ...rest }) {
 function setEventListeners(formToValidate, { inputSelector, submitButtonSelector, ...rest }) {
   const formInputs = Array.from(formToValidate.querySelectorAll(inputSelector));
   const formButton = formToValidate.querySelector(submitButtonSelector);
-  disabledButton(formButton, rest);
-
   formInputs.forEach(input => {
     input.addEventListener('input', () => {
       checkInputValidity(input);
