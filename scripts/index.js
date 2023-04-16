@@ -18,6 +18,7 @@ const openPopupProfile = function () {
   openPopup(popupElementProfile);
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent;
+  validationConfig(enableValidation);
 };
 popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
 
@@ -32,17 +33,9 @@ function handleFormSubmit (evt) {
 const openPopup = (popup) => {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEsc);
-
-  /*const enableValidation = ({
-    formSelector: '.popup__form',
-    inputSelector: '.popup__input',
-    submitButtonSelector: '.popup__button',
-    inactiveButtonClass: 'popup__button_disabled',
-    inputErrorClass: 'popup__input_type_error',
-    errorClass: 'popup__error_visible'
-  });
-  validationConfig(enableValidation);*/
 }
+
+
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
@@ -51,6 +44,7 @@ editProfilePopupForm.addEventListener('submit', handleFormSubmit);
 // Функция закрытия попапа общая
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
+
 }
 
 const popupCloseButtonElementList = document.querySelectorAll(".popup__close"); //обозначаю кнопку в уже вбранном блоке
@@ -73,9 +67,9 @@ popupAll.forEach(popup => {
 //функция закрытия через Esc
 const closePopupEsc = function (evt) {
   if (evt.key === 'Escape') {
-    const popupOpened = document.querySelector('.popup__opened');
-    closePopup(popupOpened);
-}
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  }
 }
 
 

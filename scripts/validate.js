@@ -1,5 +1,5 @@
 
-const enableValidation = ({
+enableValidation ({
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
@@ -21,25 +21,26 @@ function validationConfig({ formSelector, ...rest }) {
   })
 }
 
-const setEventListeners = (formToValidate, {inputSelector, submitButtonSelector, ...rest}) => {
+function setEventListeners(formToValidate, { inputSelector, submitButtonSelector, ...rest }) {
   const formInputs = Array.form(formToValidate.querySelectorAll(inputSelector));
   const formButton = formToValidate.querySelector(submitButtonSelector);
-  disablaseButton(formButton, rest)
+  disabledButton(formButton, rest);
 
   formInputs.forEach(input => {
     input.addEventListener('input', () => {
       checkInputValidity(input);
       if (hasInvalidInput(formInputs)) {
-        disablaseButton(formButton, rest);
+        disabledButton(formButton, rest);
       } else {
         enableButton(formButton, rest);
       }
     });
-  })
-};
+  });
+}
 
 function checkInputValidity(input) {
   const currentInputErrorContainer = document.querySelector(`#${input.id}-error`);
+  console.log(currentInputErrorContainer)
   if (input.checkValidity()) {
     currentInputErrorContainer.textContent = '';
   } else {
@@ -54,13 +55,13 @@ const hasInvalidInput = (formInputs) => {
 const enableButton = (button, { inactiveButtonClass, activeButtonClass }) => {
   button.classList.remove(inactiveButtonClass);
   button.classList.add(activeButtonClass);
-  button.removeAttribute('disabled', true);
+  button.setAttribute('disabled', true);
 }
 
 const disabledButton = (button, { inactiveButtonClass, activeButtonClass }) => {
   button.classList.add(inactiveButtonClass);
   button.classList.remove(activeButtonClass);
-  button.removeAttribute('disabled', false);
+  button.removeAttribute('disabled');
 }
 
 validationConfig(enableValidation);
