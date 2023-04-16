@@ -19,7 +19,7 @@ const validationConfig = ({
   inactiveButtonClass: 'popup__button_disabled',
   activeButtonClass: 'popup__button_active',
   inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__error_visible'
+  errorClass: 'popup__error_visible',
 });
 
 enableValidation(validationConfig);
@@ -29,7 +29,6 @@ const openPopupProfile = function () {
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent;
 };
-
 
 popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
 
@@ -45,8 +44,6 @@ const openPopup = (popup) => {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEsc);
 }
-
-
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»

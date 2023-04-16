@@ -1,6 +1,5 @@
 function enableValidation({ formSelector, ...rest }) {
   const forms = Array.from(document.querySelectorAll(formSelector));
-  console.log(rest)
   forms.forEach(form => {
     form.addEventListener('submit', (evt) => {
       evt.preventDefault()
@@ -51,18 +50,4 @@ const disabledButton = (button, { inactiveButtonClass, activeButtonClass }) => {
   button.classList.remove(activeButtonClass);
   button.removeAttribute('disabled');
 }
-
-/*const visibleError = (input, inputErrorConteiner, errorClass, inputErrorClass) => {
-  inputErrorConteiner.textContent = input.validationMessage;
-  inputErrorConteiner.classList.add(inputErrorClass);
-  input.classList.add(errorClass);
-}
-
-const hideError = (input, inputErrorConteiner, errorClass, inputErrorClass) => {
-  inputErrorConteiner.textContent = '';
-  inputErrorConteiner.classList.remove(inputErrorClass);
-  input.classList.remove(errorClass);
-}*/
-
-
 
