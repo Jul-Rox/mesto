@@ -1,3 +1,4 @@
 .popup__error {
-  min-height: 12px;
+  display: inline-block;
+  min-height: 23px;
 }
