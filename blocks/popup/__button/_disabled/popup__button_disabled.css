@@ -1,11 +1,6 @@
 .popup__button_disabled {
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  border-radius: 2px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  text-align: center;
-  color: #000000;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.5);
+  background:  #FFFFFF;
+  cursor: not-allowed;
 }
