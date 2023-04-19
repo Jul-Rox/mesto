@@ -1,5 +1,6 @@
 .popup__input_type_error {
-  border: 1px solid #FF0000;
+  border: none;
+  border-bottom: 1px solid #FF0000;
   padding-bottom: 13px;
   outline: none;
   font-style: normal;

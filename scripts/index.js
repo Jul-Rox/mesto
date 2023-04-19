@@ -25,7 +25,7 @@ const validationConfig = ({
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__input_type_error',
   errorClass: 'popup__error_visible',
-  popupMenuImputClass: 'popup__menu'
+  //popupMenuImputClass: 'popup__menu'
 });
 
 enableValidation(validationConfig);
@@ -183,6 +183,7 @@ const popupOpenButtonElementAdd = document.querySelector(".profile__add");
 
 const openPopupPlace = function () {
   openPopup(popupElementPlace);
+  clearErrors(popupOpenButtonElementAdd, inputSelector, inputErrorClass, errorClass).value = ''.reset();
 };
 
 const closePopupPlace = function () {
