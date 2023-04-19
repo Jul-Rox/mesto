@@ -34,6 +34,7 @@ const openPopupProfile = function () {
   openPopup(popupElementProfile);
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent;
+  clearErrors(editProfilePopupForm, validationConfig.inputSelector, validationConfig.inputErrorClass, validationConfig.errorClass);
 };
 
 popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
@@ -183,7 +184,8 @@ const popupOpenButtonElementAdd = document.querySelector(".profile__add");
 
 const openPopupPlace = function () {
   openPopup(popupElementPlace);
-  clearErrors(popupOpenButtonElementAdd, inputSelector, inputErrorClass, errorClass).value = ''.reset();
+  clearErrors(formElementAdd, validationConfig.inputSelector, validationConfig.inputErrorClass, validationConfig.errorClass);//вызываю функцию очистки ошибки
+  formElementAdd.reset()//очищение полей
 };
 
 const closePopupPlace = function () {

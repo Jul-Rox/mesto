@@ -42,58 +42,13 @@ function checkInputValidity(form, input, { inputErrorClass, errorClass }) {
     showInputError(form, input, inputErrorClass, errorClass);
   }
 }
-
+//функция удаления ошибок для окрывающейся функции
 function clearErrors(form, inputSelector, inputErrorClass, errorClass) {
-  const currentInputErrorContainer = form.querySelector(`#${input.id}-error`);
-  currentInputErrorContainer.forEach(input => {
-    if (input.checkValidity()) {
-    hideInputError(input, inputSelector, inputErrorClass, errorClass);
-  }
+  const inputErrorElement = form.querySelectorAll(inputSelector);
+  inputErrorElement.forEach(input => {
+    hideInputError(form, input, inputErrorClass, errorClass);
  })
 }
-  // //...тут находишь все поля ввода в текущей форме, проходишь по ним циклом через forEach, и каждому инпуту вызываешь функцию hideInputError
-  // const formInput = document.querySelectorAll(inputSelector);
-  // formInput.forEach ('submit', (evt) => {
-  //   // Отключаем событие по умолчанию
-  //       evt.prevent.Default();
-  //   // Очищаем поля формы
-  //   hideInputError(inputSelector, inputErrorClass, errorClass) = evt.target.reset();
-  //   });
-
-
-// const clearErrors = document.allq.addEventListener('submit', (e) => {
-//   // Отключаем событие по умолчанию
-//       e.prevent.Default();
-//   // Очищаем поля формы
-//       e.target.reset();
-//   });
-
-
-// function setEventListeners(formToValidate, { inputSelector, submitButtonSelector, ...rest }) {
-//   const formInputs = Array.from(formToValidate.querySelectorAll(inputSelector));
-//   const formButton = formToValidate.querySelector(submitButtonSelector);
-//   disabledButton(formButton, rest);
-//   formInputs.forEach(input => {
-//     input.addEventListener('input', () => {
-//       checkInputValidity(formToValidate, input);
-//       if (hasInvalidInput(formInputs)) {
-//         disabledButton(formButton, rest);
-//       } else {
-//         enableButton(formButton, rest);
-//       }
-//     });
-//   });
-// }
-
-// function checkInputValidity(form, input) {
-//   const currentInputErrorContainer = form.querySelector(`#${input.id}-error`);
-//   if (input.checkValidity()) {
-//     currentInputErrorContainer.textContent = '';
-//   } else {
-//     currentInputErrorContainer.textContent = input.validationMessage;
-//   }
-// }
-
 
 function hasInvalidInput(formInputs) {
   return formInputs.some(item => !item.validity.valid);
@@ -108,40 +63,3 @@ const disabledButton = (button, { inactiveButtonClass }) => {
   button.classList.add(inactiveButtonClass);
   button.setAttribute('disabled', true);
 }
-
-// const  showInputError = (input, popupMenuImputClass, errorClass, inputErrorClass ) => {
-//   popupMenuImputClass.textContent = input.validationMessage;
-//   popupMenuImputClass.classList.add(inputErrorClass);
-//   input.classList.add(errorClass);
-// }
-
-// const hideInputError = (input, popupMenuImputClass, errorClass, inputErrorClass) => {
-//   popupMenuImputClass.textContent = '';
-//   popupMenuImputClass.classList.remove(inputErrorClass);
-//   input.classList.remove(errorClass);
-// }
-
-// function checkInputValidity(formSelector, inputSelector, errorClass, inputErrorClass) {
-//   if (!inputElement.validity.valid) {
-//     showInputError(errorClass, inputErrorClass, ...rest);
-//   } else {
-//     hideInputError(errorClass, inputErrorClass, ...rest);
-//   }
-// }
-
-// function setEventListeners(formToValidate, { inputSelector, popupMenuImputClass, ...rest }) {
-//   const formInputs = Array.from(formToValidate.querySelectorAll(inputSelector));
-//   const formInputError = document.querySelector(popupMenuImputClass);
-//   visibleError(formInputError, rest);
-
-//   formInputs.forEach(input => {
-//     input.addEventListener('input', () => {
-//       checkInputValidity(input);
-//       if (hasInvalidInput(formInputs)) {
-//         showInputError(formInputError, rest);
-//       } else {
-//         hideInputError(formInputError, rest);
-//       }
-//     });
-//   });
-// }
