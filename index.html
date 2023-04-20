@@ -58,12 +58,12 @@
         <button class="popup__close" type="button"></button>
         <h2 class="popup__title">Новое меcто</h2>
         <form class="popup__form popup__form_place" name="place" novalidate>
-          <fieldset class="popup__menu">
+          <div class="popup__menu">
             <input class="popup__input popup__input_text" required type="text" id="name-card" name="name-card" placeholder="Название места" minlength="2" maxlength="30">
             <span id="name-card-error" class="popup__error"></span>
             <input class="popup__input popup__input_link" required type="url" id="link" name="link" placeholder="Ссылка на картинку">
             <span id="link-error" class="popup__error"></span>
-          </fieldset>
+          </div>
           <button class="popup__button" type="submit" value="Submit">Создать</button>
         </form>
       </div>
