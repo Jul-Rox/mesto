@@ -183,10 +183,11 @@ const popupElementPlace = document.querySelector(".popup_place");
 const popupOpenButtonElementAdd = document.querySelector(".profile__add");
 
 const openPopupPlace = function () {
-  openPopup(popupElementPlace);
+
+  enableButton(popupOpenButtonElementAdd, {inactiveButtonClass:validationConfig.inactiveButtonClass, submitButtonSelector:validationConfig.inactiveButtonClass})
   clearErrors(formElementAdd, validationConfig.inputSelector, validationConfig.inputErrorClass, validationConfig.errorClass);//вызываю функцию очистки ошибки
   formElementAdd.reset()//очищение полей
-
+  openPopup(popupElementPlace);
 };
 
 const closePopupPlace = function () {

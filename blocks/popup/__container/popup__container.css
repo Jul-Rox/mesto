@@ -25,6 +25,6 @@
     margin-right: 19px;
     margin-left: 19px;
     padding: 0px 22px;
-    max-height: 322;
+    min-height: 322px;
   }
 }
