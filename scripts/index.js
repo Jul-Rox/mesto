@@ -30,11 +30,13 @@ const validationConfig = ({
 
 enableValidation(validationConfig);
 
+const popupSubmitButtonProfile = popupElementProfile.querySelector('.popup__button');
 const openPopupProfile = function () {
   openPopup(popupElementProfile);
   inputName.value = profileName.textContent; // связала форму и поля для изменений
   inputDescription.value = profileDescription.textContent;
   clearErrors(editProfilePopupForm, validationConfig.inputSelector, validationConfig.inputErrorClass, validationConfig.errorClass);
+  disabledButton(popupSubmitButtonProfile, {inactiveButtonClass:validationConfig.inactiveButtonClass})
 };
 
 popupOpenButtonElementEdit.addEventListener("click", openPopupProfile);// действие при нажатии открыть
