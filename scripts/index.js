@@ -184,7 +184,7 @@ const popupOpenButtonElementAdd = document.querySelector(".profile__add");
 
 const openPopupPlace = function () {
 
-  enableButton(popupOpenButtonElementAdd, {inactiveButtonClass:validationConfig.inactiveButtonClass, submitButtonSelector:validationConfig.inactiveButtonClass})
+  enableButton(submitButtonSelector)   //(popupOpenButtonElementAdd, {inactiveButtonClass:validationConfig.inactiveButtonClass, submitButtonSelector:validationConfig.inactiveButtonClass})
   clearErrors(formElementAdd, validationConfig.inputSelector, validationConfig.inputErrorClass, validationConfig.errorClass);//вызываю функцию очистки ошибки
   formElementAdd.reset()//очищение полей
   openPopup(popupElementPlace);
