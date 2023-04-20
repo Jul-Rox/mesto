@@ -181,13 +181,13 @@ function handleFormAddSubmit(event) {
 //форма для добавления карточки
 const popupElementPlace = document.querySelector(".popup_place");
 const popupOpenButtonElementAdd = document.querySelector(".profile__add");
-
+//const popupSubmitButton = document.querySelector(".popup_submit");
 const openPopupPlace = function () {
-
-  enableButton(submitButtonSelector)   //(popupOpenButtonElementAdd, {inactiveButtonClass:validationConfig.inactiveButtonClass, submitButtonSelector:validationConfig.inactiveButtonClass})
+  openPopup(popupElementPlace);
   clearErrors(formElementAdd, validationConfig.inputSelector, validationConfig.inputErrorClass, validationConfig.errorClass);//вызываю функцию очистки ошибки
   formElementAdd.reset()//очищение полей
-  openPopup(popupElementPlace);
+  checkFullInput(popupOpenButtonElementAdd, {inactiveButtonClass:validationConfig.inactiveButtonClass, submitButtonSelector:validationConfig.submitButtonSelector})
+  //checkFullInput(popupElementPlace)
 };
 
 const closePopupPlace = function () {

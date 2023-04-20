@@ -42,6 +42,16 @@ function checkInputValidity(form, input, { inputErrorClass, errorClass }) {
     showInputError(form, input, inputErrorClass, errorClass);
   }
 }
+
+function checkFullInput(input, button) {
+  if (!input.value) {
+    disabledButton(button)
+  }else {
+    enableButton(button)
+  }
+};
+
+
 //функция удаления ошибок для окрывающейся функции
 function clearErrors(form, inputSelector, inputErrorClass, errorClass) {
   const inputErrorElement = form.querySelectorAll(inputSelector);
