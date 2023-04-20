@@ -186,7 +186,7 @@ const openPopupPlace = function () {
   openPopup(popupElementPlace);
   clearErrors(formElementAdd, validationConfig.inputSelector, validationConfig.inputErrorClass, validationConfig.errorClass);//вызываю функцию очистки ошибки
   formElementAdd.reset()//очищение полей
-  openPopup(disabledButton)
+
 };
 
 const closePopupPlace = function () {

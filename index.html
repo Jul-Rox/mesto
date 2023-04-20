@@ -43,12 +43,12 @@
         <button class="popup__close" type="button"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form class="popup__form popup__form_profile" name="profile" action="#" novalidate>
-          <fieldset class="popup__menu">
+          <div class="popup__menu">
             <input class="popup__input popup__input_name" id="username" required type="text" name="username" placeholder="Имя"  minlength="2" maxlength="40">
             <span id="username-error" class="popup__error"></span>
             <input class="popup__input popup__input_description" required type="text" id="description" name="description" placeholder="Описание"  minlength="2" maxlength="200">
             <span id="description-error" class="popup__error"></span>
-          </fieldset>
+          </div>
           <button class="popup__button" type="submit" value="Submit">Сохранить</button>
         </form>
       </div>
