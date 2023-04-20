@@ -1,8 +1,8 @@
 .popup__menu {
   margin: 0;
   padding: 0;
-  padding-top: 45px;
-  padding-bottom: 23px;
+  margin-top: 40px;
+  margin-bottom: 15px;
   max-width: 358px;
   border: none;
 }
@@ -13,6 +13,6 @@
 @media screen and (max-width: 478px) {
   .popup__menu {
     padding-top: 75px;
-    
+
   }
 }
