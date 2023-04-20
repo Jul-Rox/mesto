@@ -17,6 +17,7 @@ function setEventListeners(formToValidate, { inputSelector, submitButtonSelector
       } else {
         enableButton(formButton, rest);
       }
+      ;
     });
   });
 }
